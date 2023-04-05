@@ -1,12 +1,11 @@
 #include <iostream>
 
-class Node {
-public:
-	int data;
-	Node* Left;
-	Node right:
-};
+using namespace std;
 
-class Tree {
-	public Node root;
-};
+class Node
+{
+public:
+	Node *child[4];
+
+	// TreeNode(int value) : value(value), child[]
+}
