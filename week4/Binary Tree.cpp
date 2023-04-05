@@ -6,18 +6,22 @@ class Node
 {
 public:
 	int data;
-	Node** child;
+	Node* right;
+	Node* left;
+	Node* up;
+	Node* down;
+	//Node** child;
 
-	Node() {
-		child = new Node * [4];
-		for (int i = 0; i < 4; ++i) {
-			child[i] = nullptr;
-		}
-	}
+	//Node() {
+	//	child = new Node * [4];
+	//	for (int i = 0; i < 4; ++i) {
+	//		child[i] = nullptr;
+	//	}
+	//}
 
-	~Node() {
-		delete[] child;
-	}
+	//~Node() {
+	//	delete[] child;
+	//}
 };
 
 class Tree {
@@ -38,11 +42,12 @@ public:
 	Node* makeNode(Node* right, Node* left, Node* up, Node* down, int data) {
 		Node* node = new Node();
 		node->data = data;
-		node->child[0] = right;
-		node->child[1] = left;
-		node->child[2] = up;
-		node->child[3] = down;
+		node->right = right;
+		node->left = left;
+		node->up = up;
+		node->down = down;
 		return node;
 	}
 
 };
+
