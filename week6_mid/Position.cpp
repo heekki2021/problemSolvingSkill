@@ -22,4 +22,5 @@ public:
 private:
 	int coordX_;
 	int coordY_;
+	//git push test
 };
