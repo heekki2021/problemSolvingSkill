@@ -48,6 +48,4 @@ int main() {
 		cout << "¢»";
 	}
 
-
-	// 11:37 git ignore test
 }
