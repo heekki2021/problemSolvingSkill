@@ -2,6 +2,7 @@
 #include <queue>
 #include <vector>
 
+
 using namespace std;
 
 int number = 7; // 원소의 개수 7개

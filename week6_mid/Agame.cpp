@@ -1,8 +1,12 @@
-#include <iostream>
+#include "Node.cpp"
 
+#include <iostream>
+#include <vector>
 using namespace std;
 
 int main() {
+
+	vector<MapCoord> MapCoords;
 
 	int size_row;
 	int size_column;
@@ -17,11 +21,11 @@ int main() {
 
 
 
-	int** MapPos_Arr = new int*[size_row];
-	for (int i = 0; i < size_row; i++) {
-		MapPos_Arr[i] = new int[size_column];
-	}
-	
+	//int** MapPos_Arr = new int*[size_row];
+	//for (int i = 0; i < size_row; i++) {
+	//	MapPos_Arr[i] = new int[size_column];
+	//}
+	//
 
 	//¸Ê Ãâ·Â 
 	//¸ÊÀÇ °ø¹é ºÎºÐÀº ¡Þ
@@ -36,7 +40,8 @@ int main() {
 	for (int j = 0; j < size_column; j++) {
 		cout << "¢»";
 		for (int i = 0; i < size_row; i++) {
-			cout << "¡Þ";
+			/*cout << "¡Þ";*/
+			MapCoords.push_back(MapCoord(i, j, ));
 		}
 		cout << "¢»";
 

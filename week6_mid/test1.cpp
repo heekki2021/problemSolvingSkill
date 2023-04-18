@@ -1,4 +1,6 @@
 #include <iostream>
+#include <vector>
+
 
 using namespace std;
 
@@ -11,6 +13,10 @@ int main()
 
     cout << "세로 길이를 입력하세요: ";
     cin >> height;
+
+
+    vector<pair<int, int>> map;
+
 
     // 상단 테두리 출력
     for (int i = 0; i < width + 2; i++)
@@ -25,7 +31,12 @@ int main()
         cout << "♤";
         for (int j = 0; j < width; j++)
         {
-            cout << "◇";
+            //cout << "◇";
+            map.push_back(make_pair(i,j));
+
+
+
+
         }
         cout << "♤" << endl;
     }
