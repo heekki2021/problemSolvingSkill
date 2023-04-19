@@ -1,15 +1,20 @@
 #include <iostream>
 
+using namespace std;
+
 class MapCoord {
 public:
     enum class NodeStatus {
+        ENEMY,
         EMPTY,
-        OBSTACLE,
-        START,
-        GOAL,
+        Wall,
+        PLAYER,
         VISITED,
         PATH
     };
+
+    //MapCoord() : x_(0), y_(0), status_(NodeStatus::EMPTY) {}
+
 
     MapCoord(int x, int y, NodeStatus status = NodeStatus::EMPTY)
         : x_(x), y_(y), status_(status) {}
@@ -24,18 +29,35 @@ public:
     NodeStatus getStatus() const { return status_; }
     void setStatus(NodeStatus status) { status_ = status; }
 
+    void printCoordIcon(NodeStatus s) {
+        switch (s) {
+        case NodeStatus::EMPTY:
+            cout << "\033[93m□\033[0m";
+            break; 
+        case NodeStatus::ENEMY:
+
+            cout << "\033[31m□\033[0m";
+            break;
+
+        case NodeStatus::PLAYER:
+
+            cout << "\033[32m□\033[0m";
+            break;
+        
+        case NodeStatus::Wall:
+
+            cout << "\033[90m◆\033[0m";
+            break;
+        //default:
+        //    // 모든 case가 일치하지 않는 경우 실행할 코드
+        //    break;
+        }
+    }
+
 private:
     int x_;
     int y_;
     NodeStatus status_;
 };
 
-//int main() {
-//    Node node1(0, 0, Node::NodeStatus::START);
-//    Node node2(1, 1, Node::NodeStatus::GOAL);
-//
-//    std::cout << "Node 1: (" << node1.getX() << ", " << node1.getY() << "), Status: " << static_cast<int>(node1.getStatus()) << std::endl;
-//    std::cout << "Node 2: (" << node2.getX() << ", " << node2.getY() << "), Status: " << static_cast<int>(node2.getStatus()) << std::endl;
-//
-//    return 0;
-//}
+

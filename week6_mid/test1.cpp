@@ -33,7 +33,7 @@ int main()
         {
             //cout << "¡Ş";
             map.push_back(make_pair(i,j));
-
+         /*   map[i][j].*/
 
 
 
