@@ -1,4 +1,7 @@
+#pragma once 
+
 #include <iostream>
+
 
 using namespace std;
 
@@ -59,5 +62,3 @@ private:
     int y_;
     NodeStatus status_;
 };
-
-
