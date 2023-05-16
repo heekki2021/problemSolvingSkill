@@ -1,5 +1,5 @@
-#include "Node.cpp"
-#include "BFS.cpp"
+#include "Node.h"
+#include "BFS.h"
 #include <iostream>
 #include <vector>
 using namespace std;
@@ -41,14 +41,6 @@ int main() {
 	bool moreWall = true;
 
 
-
-	//MapCoord::NodeStatus empty = MapCoord::NodeStatus::EMPTY;
-	
-
-
-	//std::cout << "\033[31m□\033[0m" << std::endl;
-
-
 	cout << "맵의 크기(가로 X 세로)를 입력해 주세요" << endl;
 	//맵 최소 크기 예외 처리 해주기-------------------------------------------------------------------
 	cout << "가로 - ";
@@ -68,7 +60,7 @@ int main() {
 	//맵의 테두리는 ♤
 
 	for (int i = 0; i < size_row + 2; i++) {
-		//cout << "♤";
+		
 		mapCoords[0][i] = MapCoord(0,i, MapCoord::NodeStatus::Wall);
 		mapCoords[0][i].printCoordIcon(mapCoords[0][i].getStatus());
 
@@ -77,16 +69,17 @@ int main() {
 	cout << endl;
 
 	for (int j = 0; j < size_column; j++) {
-		//cout << "♤";
+
 		mapCoords[j][0] = MapCoord(j, 0, MapCoord::NodeStatus::Wall);
 		mapCoords[j][0].printCoordIcon(mapCoords[j][0].getStatus());
 		for (int i = 0; i < size_row; i++) {
-			/*cout << "◇";*/
+
 			mapCoords[j][i] = MapCoord(j, i, MapCoord::NodeStatus::EMPTY);
 			mapCoords[j][i].printCoordIcon(mapCoords[j][i].getStatus());
 
 
 		}
+
 		mapCoords[j][size_row + 1] = MapCoord(j, size_row + 1, MapCoord::NodeStatus::Wall);
 		mapCoords[j][size_row + 1].printCoordIcon(mapCoords[j][size_row + 1].getStatus());
 		cout << endl;
@@ -120,7 +113,7 @@ int main() {
 	cout << "Enemy y 좌표 - ";
 	cin >> EnemyY;
 	EnemyY -= 1;
-
+	
 
 	mapCoords[EnemyY][EnemyX].setStatus(MapCoord::NodeStatus::ENEMY);
 	mapmaking(mapCoords, size_row, size_column);
@@ -206,34 +199,28 @@ int main() {
 	//------------------------------------------------------------------------------------------
 	
 
-	//vector<vector<pair<int, int>>> prev(size_row, vector<pair<int, int>>(size_column, { -1, -1 }));
-	//bfs(MapCoord(EnemyX, EnemyY, MapCoord::NodeStatus::ENEMY), MapCoord(PlayerX, PlayerY, MapCoord::NodeStatus::PLAYER), size_row, size_column, mapCoords, prev);
-	//vector<MapCoord> path = reconstructPath(MapCoord(EnemyX, EnemyY, MapCoord::NodeStatus::ENEMY), MapCoord(PlayerX, PlayerY, MapCoord::NodeStatus::PLAYER), prev);
-
-	//cout << "Path: ";
-	//for (const auto& coord : path) {
-	//	cout << "(" << coord.getX() + 1 << ", " << coord.getY() + 1 << ") ";
-	//}
-	//cout << endl;
-
-	//return 0;
-	//
+	
 }
-
-
 
 
 
 void mapmaking(vector<vector<MapCoord>>& mapCoords, int size_row, int size_column)
 {
+
+
 	for (int i = 0; i < size_row + 2; i++) {
-		cout << "♤";
+		//cout << "♤";
+		//mapCoords[0][i] = MapCoord(0, i, MapCoord::NodeStatus::Wall);
+		mapCoords[0][i].printCoordIcon(mapCoords[0][i].getStatus());
+
 	}
 
 	cout << endl;
 
 	for (int j = 0; j < size_column; j++) {
-		cout << "♤";
+		//cout << "♤";
+		//mapCoords[j][0] = MapCoord(j, 0, MapCoord::NodeStatus::Wall);
+		mapCoords[j][0].printCoordIcon(mapCoords[j][0].getStatus());
 		for (int i = 0; i < size_row; i++) {
 			/*cout << "◇";*/
 			//mapCoords[j][i] = MapCoord(j, i, MapCoord::NodeStatus::EMPTY);
@@ -241,31 +228,18 @@ void mapmaking(vector<vector<MapCoord>>& mapCoords, int size_row, int size_colum
 
 
 		}
-		cout << "♤";
-
+		//mapCoords[j][size_row + 1] = MapCoord(j, size_row + 1, MapCoord::NodeStatus::Wall);
+		mapCoords[j][size_row + 1].printCoordIcon(mapCoords[j][size_row + 1].getStatus());
 		cout << endl;
+
 
 	}
 
 	for (int i = 0; i < size_row + 2; i++) {
-		cout << "♤";
+		//cout << "♤";
+		//mapCoords[size_column + 1][i] = MapCoord(size_column + 1, i, MapCoord::NodeStatus::Wall);
+		mapCoords[size_column + 1][i].printCoordIcon(mapCoords[size_column + 1][i].getStatus());
 	}
+
 }
 
-
-//vector<MapCoord> reconstructPath(MapCoord Enemy, MapCoord Player, vector<vector<pair<int, int>>>& prev) {
-//	vector<MapCoord> path;
-//	MapCoord current = Player;
-//
-//	while (current.getX() != Enemy.getX() || current.getY() != Enemy.getY()) {
-//		path.push_back(current);
-//		pair<int, int> prevCoord = prev[current.getX()][current.getY()];
-//		current.setX(prevCoord.first);
-//		current.setY(prevCoord.second);
-//	}
-//
-//	path.push_back(Enemy); // 시작점 추가
-//	reverse(path.begin(), path.end());
-//
-//	return path;
-//}

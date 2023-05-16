@@ -1,4 +1,5 @@
 ﻿  Agame.cpp
+<<<<<<< HEAD
 D:\problemSolvingSkill\week6_mid\Node.cpp(5,16): error C2011: 'MapCoord': 'class' 형식 재정의
 D:\problemSolvingSkill\week6_mid\Node.cpp(5,7): message : 'MapCoord' 선언을 참조하십시오.
 D:\problemSolvingSkill\week6_mid\BFS.cpp(9,41): error C2027: 정의되지 않은 형식 'MapCoord'을(를) 사용했습니다.
@@ -123,3 +124,6 @@ D:\problemSolvingSkill\week6_mid\Node.cpp(5,7): message : 'MapCoord' 선언을 �
   BFS.cpp
   Node.cpp
   코드를 생성하고 있습니다...
+=======
+  week6_mid.vcxproj -> D:\problemSolvingSkill\x64\Debug\week6_mid.exe
+>>>>>>> 26e6b4c8d04a2c8ba9b410b0402f6a912abe3e55
