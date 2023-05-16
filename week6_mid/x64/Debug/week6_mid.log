@@ -121,4 +121,5 @@ D:\problemSolvingSkill\week6_mid\Node.cpp(5,7): message : 'MapCoord' 선언을 �
 D:\problemSolvingSkill\week6_mid\Agame.cpp(240,50): error C2027: 정의되지 않은 형식 'MapCoord'을(를) 사용했습니다.
 D:\problemSolvingSkill\week6_mid\Node.cpp(5,7): message : 'MapCoord' 선언을 참조하십시오.
   BFS.cpp
+  Node.cpp
   코드를 생성하고 있습니다...
