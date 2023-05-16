@@ -15,9 +15,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="database.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="database.c">
       <Filter>소스 파일</Filter>
     </ClCompile>

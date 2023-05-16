@@ -128,7 +128,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="database.c" />
-    <ClCompile Include="database.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="input.txt" />

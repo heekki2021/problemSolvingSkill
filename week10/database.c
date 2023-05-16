@@ -1,30 +1,24 @@
-#include <iostream>
-#include <fstream>
-#include <string>
-#include <vector>
+#define _CRT_SECURE_NO_WARNINGS
+
+#include <stdio.h>
+#define MAX_LINE_LENGTH 1024
 
 int main() {
-
-	std::locale::global(std::locale("ko_KR.utf8"));
-
-	std::ifstream file1("input.txt");
-
-	if (!file1) {
-		std::cout << "파일을 열 수 없습니다." << std::endl;
+	//파일을 읽기 모드로 열기
+	FILE* file1 = fopen("input.txt", "r");
+	if (file1 == NULL) {
+		printf("파일을 열지 못하였습니다\n");
 		return 1;
 	}
 
-	std::string formatStr, dataStr;
+	char line[MAX_LINE_LENGTH];
 
-	//두 줄 읽기
-	std::getline(file1, formatStr);
-	std::getline(file1, dataStr);
+	//파일의 각 줄을 읽어와서 출력하기
+	while (fgets(line, sizeof(line), file1)) {
+		printf("%s", line);
+	}
 
-	file1.close();
-
-	std::cout << "Format string: " << formatStr << std::endl;
-	std::cout << "Data string: " << dataStr << std::endl;
-
-
-
+	fclose(file1);
+	return 0;
 }
+
